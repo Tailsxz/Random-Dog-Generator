@@ -1,0 +1,30 @@
+/* Custom Properties  */
+:root {
+/* Color Pallete */
+
+  --color-neutral-300: ;
+  --color-neutral-400: ;
+  --color-primary-300: ;
+  --color-primary-400: ;
+  --color-secondary-400: ;
+
+/* Font Sizes */
+
+  --fs-small: 2rem;
+  --fs-medium: 3rem;
+  --fs-large: 4rem;
+}
+
+/* Default Layout */
+
+body { 
+  background: #2A2B2A;
+}
+
+.container {
+  height: 100vh;
+  background: white;
+  margin-inline: auto;
+  width: min(100% - 10rem, 1300px);
+  box-shadow: 0px 0px 30px -10px rgba(255, 255, 255, .7);
+}

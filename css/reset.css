@@ -73,3 +73,8 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+
+/* Default rem size, 10px*/
+:root {
+  font-size: 62.5%;
+}
