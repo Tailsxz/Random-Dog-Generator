@@ -13,6 +13,8 @@
   --fs-small: 2rem;
   --fs-medium: 3rem;
   --fs-large: 4rem;
+
+  font-family: 'Karla', 'Arial', san-serif;
 }
 
 /* Utility Font-size classes */
