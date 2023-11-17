@@ -9,8 +9,9 @@
 //lets first grab all the dom elements we need
 const breedInput = document.querySelector('.input_breed');
 const generateButton = document.querySelector('.button_fetch');
+const breedCard = document.querySelector('.card_breed')
 const cardImage = document.querySelector('.card_image');
-const breedHeading = document.querySelector('.card_breed');
+const breedHeading = document.querySelector('.card_breed-title');
 const errorMessage = document.querySelector('.error_message')
 const errorCard = document.querySelector('.card_error');
 
@@ -34,6 +35,8 @@ function fetchDog(currentBreed, ...applyFunc) {
   .then(imgSrc => {
     applyFunc[0](imgSrc);
     applyFunc[1](currentBreed);
+    applyFunc[2]();
+    applyFunc[3]();
   })
   .catch(err => applyError(err));
 }
@@ -55,7 +58,7 @@ function initClickEvent(element, func) {
 
 //initializing the click event, the second and so forth elements will be bound to the rest parameter array and can be accessed using their index numbers
 initClickEvent(generateButton, () => {
-  fetchDog(getInput(), applyImage, applyCurrentBreed);
+  fetchDog(getInput(), applyImage, applyCurrentBreed, clearError, showCard);
   storeInput();
 })
 
@@ -78,6 +81,16 @@ applyLastInput();
 
 //Function to handle and display error to user
 function applyError(err) {
+  errorCard.style = 'display: block;';
+  breedCard.style = 'display: none;';
   errorMessage.innerText = 'Sorry, this breed isn\'t in our collection. :('
   console.log(err);
+}
+
+function clearError() {
+  errorCard.style = 'display: none;';
+}
+
+function showCard() {
+  breedCard.style = 'display: block';
 }
