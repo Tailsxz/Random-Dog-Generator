@@ -6,15 +6,11 @@
 
 //Actual Program
 
-
 //lets first grab all the dom elements we need
 const breedInput = document.querySelector('.input_breed');
 const generateButton = document.querySelector('.button_fetch');
 const cardImage = document.querySelector('.card_image');
 const breedHeading = document.querySelector('.card_breed');
-
-//Applying the user's last breedInput value, in case they refreshed or are visiting the site again. local storage functions are at the end of the source code
-applyLastInput();
 
 //Function to return the current value of the input
 function getInput() {
@@ -74,3 +70,6 @@ function applyLastInput() {
 
   breedInput.value = lastInput;
 }
+
+//Applying the user's last breedInput value, in case they refreshed or are visiting the site again. local storage functions are at the end of the source code
+applyLastInput();
