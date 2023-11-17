@@ -48,6 +48,10 @@ function applyImage(imgSrc) {
 
 //Function to apply the current breed to the DOM
 function applyCurrentBreed(breed) {
+  //Uppercasing our breedHeading
+  if (breed.charAt(0) != breed.charAt(0).toUpperCase) {
+    breed = `${breed.charAt(0).toUpperCase()}${breed.slice(1)}`;
+  }
   breedHeading.innerText = breed;
 }
 
