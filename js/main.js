@@ -11,6 +11,8 @@ const breedInput = document.querySelector('.input_breed');
 const generateButton = document.querySelector('.button_fetch');
 const cardImage = document.querySelector('.card_image');
 const breedHeading = document.querySelector('.card_breed');
+const errorMessage = document.querySelector('.error_message')
+const errorCard = document.querySelector('.card_error');
 
 //Function to return the current value of the input
 function getInput() {
@@ -33,7 +35,7 @@ function fetchDog(currentBreed, ...applyFunc) {
     applyFunc[0](imgSrc);
     applyFunc[1](currentBreed);
   })
-  .catch(err => console.log(err));
+  .catch(err => applyError(err));
 }
 
 //Function to apply image to the DOM img element.
@@ -73,3 +75,9 @@ function applyLastInput() {
 
 //Applying the user's last breedInput value, in case they refreshed or are visiting the site again. local storage functions are at the end of the source code
 applyLastInput();
+
+//Function to handle and display error to user
+function applyError(err) {
+  errorMessage.innerText = 'Sorry, this breed isn\'t in our collection. :('
+  console.log(err);
+}
