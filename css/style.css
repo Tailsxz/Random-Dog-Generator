@@ -47,7 +47,7 @@ body {
 
 .container {
   min-height: 100lvh;
-  padding-block-end: 4rem;
+  padding-block-end: 15rem;
   width: min(100% - 2rem, 1300px);
   background: var(--color-neutral-300);
   box-shadow: 0px 0px 75px -15px rgba(255, 255, 255, .7);
@@ -56,6 +56,7 @@ body {
 /* Header Styling */
 .header {
   padding-block: 4rem 2rem;
+  margin-block-end: 10rem;
 }
 
 .header_message {
@@ -72,8 +73,8 @@ body {
 
 .card_breed {
   display: none;
+  min-height: 400px;
   padding-block-end: 4rem;
-  min-height: 500px;
   box-shadow: -2px -4px 12px -2px rgba(0, 0, 0, .6);
   transition: all;
 }
@@ -88,12 +89,17 @@ body {
   box-shadow: -2px -4px 25px -5px rgba(0, 0, 0, 0.5);
 }
 
+.card_form {
+  margin-block-end: 5rem;
+}
+
 /* Form Styling */
 .form_query {
   padding-block-start: 2rem;
 }
 
-.form_query * {
+.input_breed,
+.form_heading {
   margin-block-end: 2rem;
 }
 
