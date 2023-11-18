@@ -70,7 +70,23 @@ body {
 }
 
 /* Form Styling */
+.form_query {
+  padding-block-start: 2rem;
+}
+
+.form_query * {
+  margin-block-end: 2rem;
+}
+
 .input_breed,
 .button_fetch {
+  display: block;
+  border: none;
   color: var(--color-secondary-700);
 }
+
+.input_breed {
+  text-align: center;
+}
+
+/*  */
