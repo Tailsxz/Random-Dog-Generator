@@ -17,7 +17,7 @@ const errorCard = document.querySelector('.card_error');
 
 //Function to return the current value of the input
 function getInput() {
-  return breedInput.value;
+  return breedInput.value.trim();
 }
 
 //Fetching function

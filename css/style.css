@@ -2,11 +2,12 @@
 :root {
 /* Color Pallete */
 
-  --color-neutral-300: ;
-  --color-neutral-400: ;
-  --color-primary-300: ;
-  --color-primary-400: ;
-  --color-secondary-400: ;
+  --color-neutral-300:#fff;
+  --color-neutral-400:#2A2B2A;
+  --color-primary-300: #04F06A;
+  --color-primary-400:#8661C1;
+  --color-secondary-400:#6BAA75;
+  --color-secondary-700: #F2A541;
 
 /* Font Sizes */
 
@@ -14,7 +15,8 @@
   --fs-medium: 3rem;
   --fs-large: 4rem;
 
-  font-family: 'Karla', 'Arial', san-serif;
+  font-family: 'DM Sans', 'Arial', san-serif;
+  font-weight: 700;
 }
 
 /* Utility Font-size classes */
@@ -30,16 +32,45 @@
   font-size: var(--fs-large);
 }
 
+/* Other utility classes */
+.center {
+  margin-inline: auto;
+}
+
 /* Default Layout */
 
 body { 
-  background: #2A2B2A;
+  background: var(--color-neutral-400);
+  color: var(--color-primary-400);
+  text-align: center;
 }
 
 .container {
-  height: 100lvh;
-  background: white;
-  margin-inline: auto;
+  min-height: 100lvh;
   width: min(100% - 10rem, 1300px);
+  background: var(--color-neutral-300);
   box-shadow: 0px 0px 75px -15px rgba(255, 255, 255, .7);
+}
+
+/* Header Styling */
+.header {
+  padding-block: 4rem 2rem;
+  width: min(100% - 5rem, 60ch);
+}
+
+.header_message {
+  margin-block: 2rem;
+  text-shadow: 0px 0px 25px var(--color-primary-300);
+}
+
+/* Card Styling */
+.card {
+  border: 2px solid black;
+  width: min(100% - 5rem, 700px);
+}
+
+/* Form Styling */
+.input_breed,
+.button_fetch {
+  color: var(--color-secondary-700);
 }
