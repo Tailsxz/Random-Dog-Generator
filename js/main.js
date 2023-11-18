@@ -62,7 +62,6 @@ function initClickEvent(element, func) {
 
 //initializing the click event, the second and so forth elements will be bound to the rest parameter array and can be accessed using their index numbers
 initClickEvent(generateButton, (e) => {
-  e.preventDefault();
   fetchDog(getInput(), applyImage, applyCurrentBreed, clearError, showCard,preventReload);
   storeInput();
 })
