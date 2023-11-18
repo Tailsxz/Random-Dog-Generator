@@ -65,8 +65,20 @@ body {
 
 /* Card Styling */
 .card {
-  border: 2px solid black;
+  padding-inline: 4rem;
   width: min(100% - 5rem, 700px);
+}
+
+.card_breed {
+  padding-block-end: 4rem;
+}
+.card_breed-title {
+  margin-block: 1rem 2rem;
+}
+
+.card_image {
+  border-radius: 5px;
+  box-shadow: -2px -4px 25px -5px rgba(0, 0, 0, 0.7);
 }
 
 /* Form Styling */
@@ -80,13 +92,29 @@ body {
 
 .input_breed,
 .button_fetch {
+  border: 3px solid var(--color-secondary-700);
   display: block;
-  border: none;
+  border-radius: 10px;
   color: var(--color-secondary-700);
+  transition: box-shadow 125ms ease-in,
+              border 125ms ease-in;
+}
+
+.input_breed:focus-visible,
+.button_fetch:focus-visible,
+.button_fetch:hover {
+  outline: none;
+  border: 3px solid var(--color-primary-400);
+  box-shadow: 0px 0px 15px -5px var(--color-primary-400);
 }
 
 .input_breed {
   text-align: center;
 }
 
-/*  */
+/* Button Styling */
+
+.button {
+  padding-inline: 2rem;
+  background: transparent;
+}
