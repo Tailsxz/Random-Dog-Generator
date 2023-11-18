@@ -41,6 +41,7 @@ function fetchDog(currentBreed, ...applyFunc) {
     applyFunc[1](currentBreed);
     applyFunc[2]();
     applyFunc[3]();
+    console.log(imgSrc);
   })
   .catch(err => applyError(err));
 }
@@ -79,8 +80,9 @@ function storeInput() {
 
 function applyLastInput() {
   const lastInput = localStorage.getItem('lastInput');
+
   //if there is a new user, and there exists no stored lastInput do nothing
-  if (lastInput == null) return;
+  if (!lastInput) return;
 
   breedInput.value = lastInput;
 }
@@ -94,6 +96,7 @@ function applyError(err) {
   breedCard.style = 'display: none;';
   errorMessage.innerText = 'Sorry, this breed isn\'t in our collection. :('
   console.log(err);
+  
 }
 
 function clearError() {

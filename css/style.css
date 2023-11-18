@@ -48,7 +48,7 @@ body {
 .container {
   min-height: 100lvh;
   padding-block-end: 4rem;
-  width: min(100% - 10rem, 1300px);
+  width: min(100% - 2rem, 1300px);
   background: var(--color-neutral-300);
   box-shadow: 0px 0px 75px -15px rgba(255, 255, 255, .7);
 }
