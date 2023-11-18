@@ -62,8 +62,9 @@ function initClickEvent(element, func) {
 
 //initializing the click event, the second and so forth elements will be bound to the rest parameter array and can be accessed using their index numbers
 initClickEvent(generateButton, (e) => {
-  fetchDog(getInput(), applyImage, applyCurrentBreed, clearError, showCard,preventReload);
+  fetchDog(getInput(), applyImage, applyCurrentBreed, clearError, showCard);
   storeInput();
+  e.preventDefault();
 })
 
 //lets try to use local storage for the first time, to store the user's last inputted breed
