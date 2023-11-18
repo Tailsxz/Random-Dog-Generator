@@ -38,10 +38,9 @@ function fetchDog(currentBreed, ...applyFunc) {
   .then(data => data.message)
   .then(imgSrc => {
     applyFunc[0](imgSrc);
-    applyFunc[1](currentBreed);
+    applyFunc[1](currentBreed, imgSrc);
     applyFunc[2]();
     applyFunc[3]();
-    console.log(imgSrc);
   })
   .catch(err => applyError(err));
 }
@@ -52,12 +51,24 @@ function applyImage(imgSrc) {
 }
 
 //Function to apply the current breed to the DOM
-function applyCurrentBreed(breed) {
-  //Uppercasing our breedHeading
+function applyCurrentBreed(breed, url) {
+  if (url.includes('-')) {
+    //if the url includes a dash, -, then that means the breed name also has a sub breed. The structure function takes care of reversing the ordering of the words while also capitalizing the first letter of each word.
+    breedHeading.innerText = structureTwoWordedBreeds(url);  
+    return;
+  }
+  //Uppercasing our breedHeading when its a single word.
   if (breed.charAt(0) != breed.charAt(0).toUpperCase) {
     breed = `${breed.charAt(0).toUpperCase()}${breed.slice(1)}`;
   }
   breedHeading.innerText = breed;
+}
+
+//function to split two worded breeds and capitalize first char
+function structureTwoWordedBreeds(url) {
+  let urlArr = url.split('/');
+  let breed = urlArr[4].split('-').map((word) => word[0].toUpperCase() + word.slice(1)).reverse().join(' ');
+  return breed;
 }
 
 //Function to initialize click listener
