@@ -23,6 +23,10 @@ function getInput() {
 //Fetching function
 function fetchDog(currentBreed, ...applyFunc) {
   const url = `https://dog.ceo/api/breed/${currentBreed}/images/random`
+
+  //set a conditional guard clause to return if the current value is empty.
+  if (!currentBreed) return;
+
   fetch(url)
   .then(res => {
     if (!res.ok) {
