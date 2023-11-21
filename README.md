@@ -1,5 +1,6 @@
 # Project Title
 Random Doggo Generator
+
 [Live Site](https://dailydogfix.netlify.app)
 
 Third pass at using APIs, utilizing the dog.ceo API to pull random pictures of a certain breed the user inputs.
