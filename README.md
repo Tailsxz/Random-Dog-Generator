@@ -1,5 +1,4 @@
-# Project Title
-Random Doggo Generator
+# Random Doggo Generator
 
 [Live Site](https://dailydogfix.netlify.app)
 
